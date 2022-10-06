@@ -66,7 +66,7 @@ public class Queue<T> implements QueueInterface<T>{
 	 */
 	public T getFront() {
 		if(isEmpty()) {
-			throw new EmptyQueueException();
+			throw new EmptyQueueException("The queue is empty");
 		}
 		else {
 			return head.getData();
