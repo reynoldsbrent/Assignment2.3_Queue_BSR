@@ -19,7 +19,7 @@ public class LinkedList<T>{
 	} // end constructor
 	
 	/**
-	 * @return returns true if the list is empty
+	 * @return returns true if the linked list is empty
 	 */
 	public boolean isEmpty()
 	{
@@ -40,7 +40,8 @@ public class LinkedList<T>{
 	}
 	
 	/**
-	 * @param newEntry the value of aNode as sent into this method
+	 * Adds a node to the linked list
+	 * @param newEntry the value of newEntry as sent into this method
 	 */
 	public void addNode(Node<T> newEntry)
 	{
@@ -55,6 +56,9 @@ public class LinkedList<T>{
 		length++;
 		
 	}
+	/**
+	 * @param node the value of node as sent into this method
+	 */
 	public void removeNode(Node<T> node) {
 		if(!isEmpty()) {
 			head.setNextNode(node);
