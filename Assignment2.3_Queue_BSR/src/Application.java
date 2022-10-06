@@ -11,15 +11,44 @@ public class Application {
 		
 		Queue<String> queue = new Queue<String>();
 		
-		queue.enqueue("Brent");
-		queue.enqueue("Sevastian");
-		queue.enqueue("Reynolds");
-		queue.enqueue("Paul");
+		queue.enqueue("Bill");
+		queue.enqueue("Alice");
+		queue.enqueue("Bob");
 		
 		queue.print();
-		System.out.println("---------------");
+		System.out.println("--------------");
+		
 		queue.dequeue();
 		queue.print();
+		System.out.println("--------------");
+		
+		queue.enqueue("Jane");
+		queue.print();
+		System.out.println("--------------");
+		
+		queue.enqueue("Hamad");
+		queue.print();
+		System.out.println("--------------");
+		
+		queue.dequeue();
+		queue.print();
+		System.out.println("--------------");
+		
+		queue.dequeue();
+		queue.print();
+		System.out.println("--------------");
+		
+		queue.enqueue("Jim");
+		queue.print();
+		System.out.println("--------------");
+		
+		queue.dequeue();
+		queue.print();
+		System.out.println("--------------");
+		
+		queue.dequeue();
+		queue.print();
+		
 
 	}
 
