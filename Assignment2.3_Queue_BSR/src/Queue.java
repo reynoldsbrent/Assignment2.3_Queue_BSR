@@ -12,7 +12,7 @@ public class Queue<T> implements QueueInterface<T>{
 	private int size; 
 	
 	/**
-	 *  No arg constructor initializes the head and rear of the queue to null
+	 *  No arg constructor initializes the head and rear of the queue to null and size to 0
 	 */
 	public Queue() {
 		head = null;
@@ -26,17 +26,17 @@ public class Queue<T> implements QueueInterface<T>{
 	 * @param newEntry as passed in by the calling method 
 	 */
 	public void enqueue(T newEntry) {
-		Node<T> node = new Node<T> ();
-		node.setData(newEntry);
-		myQueue.addNode(node);
+		Node<T> aNode = new Node<T> ();
+		aNode.setData(newEntry);
+		myQueue.addNode(aNode);
 		
 		if(isEmpty()) {
-			head = node.getNode();
+			head = aNode.getNode();
 		}
 		else {
-			rear.setNextNode(node);
+			rear.setNextNode(aNode);
 		}
-		rear = node;
+		rear = aNode;
 		size++;
 		
 	}
@@ -72,19 +72,27 @@ public class Queue<T> implements QueueInterface<T>{
 			return head.getData();
 		}
 	}
-
+	
+	/**
+	 * This method prints all entries in the queue
+	 */
+	public void print() {
+		Node<T> aNode = myQueue.getList();
+		while(aNode != null) {
+			System.out.println(aNode.getData());
+			aNode = aNode.getNextNode();
+		}
+	}
 
 	/**
 	 *This method returns whether the queue is empty or not
 	 * @return true if the queue is empty, false otherwise
 	 */
 	public boolean isEmpty() {
-		if(size <= 0) {
+		if(size <= 0)
 			return true;
-		}
-		else {
+		else 
 			return false;
-		}
 	}
 
 	/**
@@ -95,18 +103,4 @@ public class Queue<T> implements QueueInterface<T>{
 		rear = null;
 		
 	}
-	
-	/**
-	 * This method prints all entries in the queue
-	 */
-	public void print() {
-		Node<T> node = myQueue.getList();
-		
-		do {
-			System.out.println(node.getData());
-			node = node.getNextNode();
-		}while(node != null);
-	}
-	
-
 }
